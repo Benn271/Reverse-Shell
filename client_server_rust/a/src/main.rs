@@ -32,7 +32,8 @@ fn main() {
 }
 
 fn get_command() -> String{
-	//println!("Command: ");
+
+	println!("Command: ");
 	let mut input = String::new();
 	std::io::stdin().read_line(&mut input);
 
