@@ -2,8 +2,8 @@
 Simple, easy to use rust reverse shell
 
 # Features
-*Server waits until Client connects
-*Server can run commands on the client
+  * Server waits until Client connects
+  * Server can run commands on the client
 
 
 # WARNING (FIXING NOW)
