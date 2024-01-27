@@ -15,4 +15,8 @@ Simple, easy to use rust reverse shell for the attacker AKA Server and the victi
 # WARNING
 If you run a command that has a lot of output it could come through as different commands.
 
+# Licens
+This is for education only. I am not responsiple for any misuse.
+
 # Support
+[Buy me a Coffee](https://buymeacoffee.com/fuelmywork)
