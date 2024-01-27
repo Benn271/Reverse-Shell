@@ -1,6 +1,5 @@
 use std::net::TcpListener;
 use std::io::{Read, Write};
-use std::process::Command;
 
 //bind has to be a valid port to listen on
 //A
@@ -18,11 +17,11 @@ fn main() {
 			let command = get_command();
 
 			//send command
-			stream.write_all(command.as_bytes());
+			let _ = stream.write_all(command.as_bytes());
 
 			//read output
 			let mut buffer = [0; 512];
-			stream.read(&mut buffer);
+			let _ = stream.read(&mut buffer);
 			let output = String::from_utf8_lossy(&buffer[..]);
 			println!("");
 			println!("{}", output);
@@ -35,7 +34,7 @@ fn get_command() -> String{
 
 	println!("Command: ");
 	let mut input = String::new();
-	std::io::stdin().read_line(&mut input);
+	let _ = std::io::stdin().read_line(&mut input);
 
 	return input;
 }
