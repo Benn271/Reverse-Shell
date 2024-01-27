@@ -12,6 +12,11 @@ Simple, easy to use rust reverse shell for the attacker AKA Server and the victi
   * Make the output come through all at once
 
 
+# Use
+1. Change the ip addresses for your use in a and v
+2. Compile the code
+3. Run each executible
+
 # WARNING
 If you run a command that has a lot of output it could come through as different commands.
 
